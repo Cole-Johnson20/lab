@@ -19,12 +19,12 @@ class Account:
             else:
                 self.__account_balance += amount
                 return True
-        except ValueError:
-            print('Enter numeric values.')
-        except:
-            print('Invalid input')
+        except TypeError:
+            print('Could not compare str to int')
+            raise
 
     def withdraw(self, amount: float) -> bool:
+
         """
         Allows the user to withdraw money from the account i.e subtracting money from the account
         :param amount: Amount of money that
@@ -38,12 +38,12 @@ class Account:
             else:
                 self.__account_balance -= amount
                 return True
-        except ValueError:
-            print('Enter numeric values.')
-        except:
-            print('Invalid input')
+        except TypeError:
+            print('Could not compare str to int')
+            raise
 
     def get_balance(self) -> float:
+
         """
         Gets the total balance of the account
         :return:Total balance of the account
@@ -51,6 +51,7 @@ class Account:
         return self.__account_balance
 
     def get_name(self) -> str:
+
         """
         Get the name associated with the account
         :return: Name of the account
